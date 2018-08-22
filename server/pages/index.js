@@ -1,17 +1,13 @@
 import React from 'react'
-import Link from 'next/link'
+import styled from 'styled-components'
+
+const Title = styled.h1`
+  color: red;
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+`;
 
 export default () => (
-  <ul>
-    <li><Link href='/b' as='/a'><a>a</a></Link></li>
-    <li><Link href='/a' as='/b'><a>b</a></Link></li>
-    <li>
-      <Link
-        href={{pathname: '/posts', query: {id: '2'}}}
-        as='/posts/2'
-      >
-        <a>post #2</a>
-      </Link>
-    </li>
-  </ul>
+  <Title>Apply Now</Title>
 )
