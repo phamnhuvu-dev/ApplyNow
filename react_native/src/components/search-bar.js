@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import SearchBar from "../components/search-bar";
 
-export default class HomeScreen extends Component {
+export default class BoardScreen extends Component {
   render() {
     return (
       <View>
-        <Text>Home Screen</Text>
-        <SearchBar></SearchBar>
+        <Text>Board Screen</Text>
       </View>
     )
   }
