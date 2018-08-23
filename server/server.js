@@ -5,15 +5,30 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 const next = require('next');
+const sequelize = require('./db/sqlite');
+
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+const user_api = require("./routes/api/user-api");
+
 app.prepare()
   .then(() => {
     const server = express();
+    const router = express.Router();
+    sequelize
+      .authenticate()
+      .then(() => {
+        console.log('Connection has been established successfully.');
+      })
+      .catch(err => {
+        console.error('Unable to connect to the database:', err);
+      });
+
+    const User = require('./db/user-db')(sequelize);
 
     server.use(logger('dev'));
     server.use(express.json());
@@ -21,21 +36,25 @@ app.prepare()
     server.use(cookieParser());
     server.use(express.static(path.join(__dirname, 'public')));
 
-    server.get('/a', (req, res) => {
-      return app.render(req, res, '/b', req.query)
-    });
+    // server.get('/a', (req, res) => {
+    //   return app.render(req, res, '/b', req.query)
+    // });
+    //
+    // server.get('/b', (req, res) => {
+    //   return app.render(req, res, '/a', req.query)
+    // });
+    //
+    // server.get('/posts/:id', (req, res) => {
+    //   return app.render(req, res, '/posts', { id: req.params.id })
+    // });
 
-    server.get('/b', (req, res) => {
-      return app.render(req, res, '/a', req.query)
-    });
-
-    server.get('/posts/:id', (req, res) => {
-      return app.render(req, res, '/posts', { id: req.params.id })
-    });
+    server.use('/api/user', user_api(router, User));
 
     server.get('*', (req, res) => {
       return handle(req, res)
     });
+
+
 
     server.listen(port, (err) => {
       if (err) throw err;
