@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
-export default class BoardScreen extends Component {
+export default class ApplyScreen extends Component {
   render() {
     return (
       <View>
-        <Text>Board Screen</Text>
+        <Text>Apply Screen</Text>
       </View>
     )
   }
