@@ -3,14 +3,16 @@
 import {AppRegistry, Image} from 'react-native';
 // import App from './App';
 import {name as appName} from './app.json';
-import {createStackNavigator} from "react-navigation";
+import {createStackNavigator, SafeAreaView} from "react-navigation";
 import MainScreen from "./src/screens/main-screen";
 import React from "react";
+import {Platform, StyleSheet, Text, View, StatusBar} from 'react-native';
 import {createMaterialBottomTabNavigator} from "react-navigation-material-bottom-tabs";
 import HomeScreen from "./src/screens/home-screen";
 import MessageScreen from "./src/screens/message-screen";
 import BoardScreen from "./src/screens/board/board-screen";
 import NotificationScreen from "./src/screens/notification-screen";
+
 
 const Bottom = createMaterialBottomTabNavigator(
   {
@@ -80,7 +82,15 @@ const RootStack = createStackNavigator(
 );
 
 const App = () => (
-  <Bottom/>
+  <View style={{flex: 1, backgroundColor: '#F06767'}}>
+    <StatusBar
+      barStyle="light-content"
+      backgroundColor="#F06767"
+    />
+    <SafeAreaView style={{flex: 1}} forceInset={{ bottom: 'never'}}>
+      <RootStack/>
+    </SafeAreaView>
+  </View>
 );
 
 AppRegistry.registerComponent(appName, () => App);

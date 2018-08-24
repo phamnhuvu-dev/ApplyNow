@@ -18,7 +18,7 @@ target 'react_native' do
     'RCTWebSocket', # needed for debugging,
     'RCTImage',
     'RCTLinkingIOS',
-    'RCTAnimation'
+    'RCTAnimation',
     # Add any other subspecs you want to use in your project
   ]
   # Explicitly include Yoga if you are using RN >= 0.42.0
