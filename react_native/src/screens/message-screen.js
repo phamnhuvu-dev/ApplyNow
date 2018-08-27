@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, FlatList, Image} from 'react-native';
-import SearchBar from "../components/search-bar";
-import Avatar from "../components/avatar";
+import SearchBar from '../components/search-bar';
+import Avatar from '../components/avatar';
 
 export default class MessageScreen extends Component {
 
 
   render() {
     return (
-      <View style={{marginBottom: 58}}>
+      <View style={{flex: 1}}>
         <SearchBar style={{marginHorizontal: 24, marginVertical: 16}}/>
         <FlatList
           style={{paddingHorizontal: 24}}

@@ -18,9 +18,11 @@ export default class BoardScreen extends Component {
   };
 
   render() {
+    let marginLeft = Platform.OS === "ios"? 8: 0;
     return (
       <View style={[
         {
+          backgroundColor: 'white',
           borderWidth: 1,
           borderColor: '#9c9c9c',
           flexDirection: 'row',
@@ -30,6 +32,7 @@ export default class BoardScreen extends Component {
       ]}>
         <TextInput
           style={{
+            marginLeft: marginLeft,
             flex: 0.9,
             height: 40
           }}

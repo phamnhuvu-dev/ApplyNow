@@ -5,10 +5,10 @@ import Avatar from "../components/avatar";
 export default class NotificationScreen extends Component {
   render() {
     return (
-      <View>
+      <View style={{flex: 1}}>
         <FlatList
-          style={{paddingHorizontal: 24}}
-          data={[{key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}]}
+          style={{paddingHorizontal: 24, paddingVertical: 16}}
+          data={[{key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}]}
           extraData={this.state}
           keyExtractor={this._keyExtractor}
           renderItem={this._renderItem}

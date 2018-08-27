@@ -33,7 +33,7 @@ export default class OfferScreen extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{flex: 1}}>
         <FlatList
           style={{paddingHorizontal: 24}}
           data={[{key: 'a'}, {key: 'b'}]}

@@ -15,7 +15,13 @@ const Top = createMaterialTopTabNavigator(
   },
 
   {
-    tabBarComponent: TabsBar
+    tabBarOptions: {
+      indicatorStyle: {backgroundColor: '#F06767'},
+      labelStyle: {color: '#707070'},
+      style: {
+        backgroundColor: 'white'
+      }
+    }
   }
 );
 
