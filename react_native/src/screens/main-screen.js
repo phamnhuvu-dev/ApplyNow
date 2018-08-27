@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 
 import {createBottomTabNavigator} from 'react-navigation';
-import HomeScreen from "./home-screen";
-import MessageScreen from "./message-screen";
+import HomeScreen from "./home/home-screen";
+import MessageScreen from "./message/message-screen";
 import BoardScreen from "./board/board-screen";
-import NotificationScreen from "./notification-screen";
+import NotificationScreen from "./notification/notification-screen";
 import {createMaterialBottomTabNavigator} from "react-navigation-material-bottom-tabs";
 
 const Bottom = createMaterialBottomTabNavigator(
@@ -15,7 +15,7 @@ const Bottom = createMaterialBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({focused, tintColor}) => (
           <Image
-            source={require('../assets/icon/ic_home.png')}
+            source={require('../res/icon/ic_home.png')}
             style={[ {width: 28, height: 28, tintColor: tintColor, resizeMode: 'stretch'}]}
           />
         )
@@ -26,7 +26,7 @@ const Bottom = createMaterialBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({focused, tintColor}) => (
           <Image
-            source={require('../assets/icon/ic_message.png')}
+            source={require('../res/icon/ic_message.png')}
             style={[ {width: 28, height: 28, tintColor: tintColor, resizeMode: 'stretch'}]}
           />
         )
@@ -37,7 +37,7 @@ const Bottom = createMaterialBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({focused, tintColor}) => (
           <Image
-            source={require('../assets/icon/ic_board.png')}
+            source={require('../res/icon/ic_board.png')}
             style={[ {width: 28, height: 28, tintColor: tintColor, resizeMode: 'stretch'}]}
           />
         )
@@ -48,7 +48,7 @@ const Bottom = createMaterialBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({focused, tintColor}) => (
           <Image
-              source={require('../assets/icon/ic_notifications.png')}
+              source={require('../res/icon/ic_notifications.png')}
               style={[ {width: 28, height: 28, tintColor: tintColor, resizeMode: 'stretch'}]}
             />
         )

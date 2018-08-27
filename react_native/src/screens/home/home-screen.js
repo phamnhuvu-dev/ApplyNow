@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, FlatList, Image} from 'react-native';
-import SearchBar from "../components/search-bar";
-import Avatar from "../components/avatar";
-import Header from "../components/header";
+import React, {Component} from "react";
+import {FlatList, Text, View, Platform} from "react-native";
+import SearchBar from "../../components/search-bar";
+import Avatar from "../../components/avatar";
+import Header from "../../components/header";
 
 export default class HomeScreen extends Component {
 
@@ -18,8 +18,8 @@ export default class HomeScreen extends Component {
             <Text>Description</Text>
           </View>
         </View>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <Text>ø
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.ø
           Vestibulum pellentesque lacus eleifend elit luctus blandit.
           Fusce auctor, massa a blandit accumsan, dolor mi
           pharetra libero, et consectetur est enim sit amet odio.

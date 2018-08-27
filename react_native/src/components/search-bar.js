@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TextInput, Image} from 'react-native';
+import React, {Component} from "react";
+import {Image, TextInput, View} from "react-native";
 
 export default class BoardScreen extends Component {
 
@@ -47,7 +47,7 @@ export default class BoardScreen extends Component {
             resizeMode: 'center',
             flex: 0.1, tintColor: '#070707',
           }}
-          source={require('../assets/icon/ic_search.png')}
+          source={require('../res/icon/ic_search.png')}
         />
         {/*<Text>{this.state.text}</Text>*/}
       </View>

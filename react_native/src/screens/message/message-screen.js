@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, FlatList, Image} from 'react-native';
-import SearchBar from '../components/search-bar';
-import Avatar from '../components/avatar';
+
+import SearchBar from "../../components/search-bar";
+import Avatar from "../../components/avatar";
 
 export default class MessageScreen extends Component {
 
@@ -52,7 +53,7 @@ export default class MessageScreen extends Component {
                 resizeMode: 'center',
                 tintColor: '#070707',
               }}
-              source={require('../assets/icon/ic_ok_outline.png')}
+              source={require('../../res/icon/ic_ok_outline.png')}
             />
           </View>
         </View>

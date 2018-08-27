@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {FlatList, Image, Platform, StyleSheet, Text, View} from 'react-native';
-import Avatar from "../components/avatar";
+import Avatar from "../../components/avatar";
 
 export default class NotificationScreen extends Component {
   render() {
@@ -48,7 +48,7 @@ export default class NotificationScreen extends Component {
                 resizeMode: 'center',
                 tintColor: '#070707',
               }}
-              source={require('../assets/icon/ic_ok_outline.png')}
+              source={require('../../res/icon/ic_ok_outline.png')}
             />
           </View>
         </View>
