@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
-import {FlatList, Image, Platform, StyleSheet, Text, View} from 'react-native';
-import Avatar from "../components/avatar";
+import {Platform, StyleSheet, Text, View, FlatList, Image} from 'react-native';
+import SearchBar from "../../components/search-bar";
+import Avatar from "../../components/avatar";
 
-export default class NotificationScreen extends Component {
+export default class MessageScreen extends Component {
+
+
   render() {
     return (
-      <View>
+      <View style={{marginBottom: 58}}>
+        <SearchBar style={{marginHorizontal: 24, marginVertical: 16}}/>
         <FlatList
           style={{paddingHorizontal: 24}}
           data={[{key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}]}
@@ -48,11 +52,12 @@ export default class NotificationScreen extends Component {
                 resizeMode: 'center',
                 tintColor: '#070707',
               }}
-              source={require('../assets/icon/ic_ok_outline.png')}
+              source={require('../../res/icon/ic_ok_outline.png')}
             />
           </View>
         </View>
       </View>
     );
   };
+
 }

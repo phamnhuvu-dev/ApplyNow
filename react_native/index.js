@@ -1,17 +1,23 @@
 /** @format */
 
-import {AppRegistry, Image} from 'react-native';
+import {AppRegistry, Image} from "react-native";
 // import App from './App';
-import {name as appName} from './app.json';
+import {name as appName} from "./app.json";
 import {createStackNavigator, SafeAreaView} from "react-navigation";
 import MainScreen from "./src/screens/main-screen";
 import React from "react";
-import {Platform, StyleSheet, Text, View, StatusBar} from 'react-native';
+import {Platform, StyleSheet, Text, View, StatusBar} from "react-native";
 import {createMaterialBottomTabNavigator} from "react-navigation-material-bottom-tabs";
-import HomeScreen from "./src/screens/home-screen";
-import MessageScreen from "./src/screens/message-screen";
+import HomeScreen from "./src/screens/home/home-screen";
+import MessageScreen from "./src/screens/message/message-screen";
 import BoardScreen from "./src/screens/board/board-screen";
-import NotificationScreen from "./src/screens/notification-screen";
+import NotificationScreen from "./src/screens/notification/notification-screen";
+import {Provider} from "react-redux";
+import store from "./src/redux/store";
+import LoginScreen from "./src/screens/account/login-screen";
+import {main} from './src/res/colors'
+import SignUpScreen from "./src/screens/account/signup-screen";
+import ForgotPasswordScreen from "./src/screens/account/forgot-password-screen";
 
 
 const Bottom = createMaterialBottomTabNavigator(
@@ -21,8 +27,8 @@ const Bottom = createMaterialBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({focused, tintColor}) => (
           <Image
-            source={require('./src/assets/icon/ic_home.png')}
-            style={[ {width: 28, height: 28, tintColor: tintColor, resizeMode: 'stretch'}]}
+            source={require("./src/res/icon/ic_home.png")}
+            style={[{width: 28, height: 28, tintColor: tintColor, resizeMode: "stretch"}]}
           />
         )
       }
@@ -32,8 +38,8 @@ const Bottom = createMaterialBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({focused, tintColor}) => (
           <Image
-            source={require('./src/assets/icon/ic_message.png')}
-            style={[ {width: 28, height: 28, tintColor: tintColor, resizeMode: 'stretch'}]}
+            source={require("./src/res/icon/ic_message.png")}
+            style={[{width: 28, height: 28, tintColor: tintColor, resizeMode: "stretch"}]}
           />
         )
       }
@@ -43,8 +49,8 @@ const Bottom = createMaterialBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({focused, tintColor}) => (
           <Image
-            source={require('./src/assets/icon/ic_board.png')}
-            style={[ {width: 28, height: 28, tintColor: tintColor, resizeMode: 'stretch'}]}
+            source={require("./src/res/icon/ic_board.png")}
+            style={[{width: 28, height: 28, tintColor: tintColor, resizeMode: "stretch"}]}
           />
         )
       }
@@ -54,8 +60,8 @@ const Bottom = createMaterialBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({focused, tintColor}) => (
           <Image
-            source={require('./src/assets/icon/ic_notifications.png')}
-            style={[ {width: 28, height: 28, tintColor: tintColor, resizeMode: 'stretch'}]}
+            source={require("./src/res/icon/ic_notifications.png")}
+            style={[{width: 28, height: 28, tintColor: tintColor, resizeMode: "stretch"}]}
           />
         )
       }
@@ -65,32 +71,57 @@ const Bottom = createMaterialBottomTabNavigator(
     // Notification: NotificationScreen
   }, {
     barStyle: {
-      backgroundColor: '#F06767',
+      backgroundColor: "#F06767",
     },
 
-    activeTintColor: 'white'
+    activeTintColor: "white"
   }
 );
 
 const RootStack = createStackNavigator(
   {
-    Main: {screen: Bottom, navigationOptions: {header: null}}
+    Login: {
+      screen: LoginScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    SignUp: {
+      screen: SignUpScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    ForgotPassword: {
+      screen: ForgotPasswordScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Main: {
+      screen: Bottom,
+      navigationOptions: {
+        header: null,
+      },
+    },
   },
   {
-    initialRouteName: 'Main'
+    initialRouteName: "Login"
   }
 );
 
 const App = () => (
-  <View style={{flex: 1, backgroundColor: '#F06767'}}>
-    <StatusBar
-      barStyle="light-content"
-      backgroundColor="#F06767"
-    />
-    <SafeAreaView style={{flex: 1}} forceInset={{ bottom: 'never'}}>
-      <RootStack/>
-    </SafeAreaView>
-  </View>
+  <Provider store={store}>
+    <View style={{flex: 1, backgroundColor: main}}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor= "#F06767"
+      />
+      <SafeAreaView style={{flex: 1}} forceInset={{bottom: "never"}}>
+        <RootStack/>
+      </SafeAreaView>
+    </View>
+  </Provider>
 );
 
 AppRegistry.registerComponent(appName, () => App);

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, FlatList, Image} from 'react-native';
-import SearchBar from "../components/search-bar";
-import Avatar from "../components/avatar";
+import SearchBar from "../../components/search-bar";
+import Avatar from "../../components/avatar";
 
 export default class HomeScreen extends Component {
 
