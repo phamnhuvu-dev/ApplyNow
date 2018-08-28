@@ -1,6 +1,6 @@
 import MessageState from "./message-state";
 
-export default (state = new MessageState(), action) => {
+export default (state, action, root) => {
   switch (action.type) {
     default:
       return state

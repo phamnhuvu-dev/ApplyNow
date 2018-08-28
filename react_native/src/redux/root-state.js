@@ -1,10 +1,10 @@
-import HomeState from "../home/home-state";
-import MessageState from "../message/message-state";
-import BoardState from "../board/board-state";
-import NotificationState from "../notification/notification-state";
+import HomeState from "./home/home-state";
+import MessageState from "./message/message-state";
+import BoardState from "./board/board-state";
+import NotificationState from "./notification/notification-state";
 
 
-export default class AppState {
+export default class RootState {
 
 
   constructor(home = new HomeState(),

@@ -1,6 +1,6 @@
 import BoardState from "./board-state";
 
-export default (state = new BoardState(), action) => {
+export default (state, action, root) => {
   switch (action.type) {
     default:
       return state

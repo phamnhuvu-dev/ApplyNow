@@ -1,6 +1,6 @@
 
 
-export default class Topic {
+export default class Post {
 
   constructor(id, title, sender, content) {
     this.id = id;

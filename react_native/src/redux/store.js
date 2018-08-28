@@ -3,7 +3,7 @@ import reducers from './reducers'
 
 
 const store = createStore(
-  reducers
+  reducers,
 );
 
 export default store;

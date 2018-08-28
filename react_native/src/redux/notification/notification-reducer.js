@@ -1,6 +1,6 @@
 import NotificationState from "./notification-state";
 
-export default (state = new NotificationState(), action) => {
+export default (state, action, root) => {
   switch (action.type) {
     default:
       return state
