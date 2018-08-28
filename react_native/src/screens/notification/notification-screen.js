@@ -7,7 +7,7 @@ export default class NotificationScreen extends Component {
     return (
       <View style={{flex: 1}}>
         <FlatList
-          style={{paddingHorizontal: 24, paddingVertical: 16}}
+          style={{paddingHorizontal: 24}}
           data={[{key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}]}
           extraData={this.state}
           keyExtractor={this._keyExtractor}
@@ -19,9 +19,9 @@ export default class NotificationScreen extends Component {
 
   _keyExtractor = (item, index) => index.toString();
 
-  _renderItem = (item, index) => {
+  _renderItem = ({item, index}) => {
     return (
-      <View style={{flexDirection: 'row', marginBottom: 16}}>
+      <View style={{flexDirection: 'row', marginBottom: 16, marginTop: index === 0 ? 16: 0}}>
         <Avatar source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}/>
         <View style={{flex: 1}}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>

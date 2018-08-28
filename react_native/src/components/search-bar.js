@@ -3,20 +3,6 @@ import {Image, TextInput, View, Platform} from "react-native";
 
 export default class BoardScreen extends Component {
 
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: ''
-    }
-  }
-
-  _changeText = (text) => {
-    this.setState({
-      text: text
-    })
-  };
-
   render() {
     let marginLeft = Platform.OS === "ios"? 8: 0;
     return (
@@ -37,7 +23,7 @@ export default class BoardScreen extends Component {
             height: 40
           }}
           placeholder={"Search..."}
-          onChangeText={this._changeText}
+          onChangeText={this.props.onChangeText}
         />
 
         <Image
