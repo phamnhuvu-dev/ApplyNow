@@ -7,9 +7,39 @@ const user_api = (router, User) => {
   });
 
   router.post('/login', (req, res) => {
-    res.send({
-      login: 'OK'
-    })
+    try {
+      console.log(req.body);
+      const email = req.body.email;
+      const password = req.body.password;
+      User.findOne({
+        attributes: ['id', 'name', 'email'],
+        where: {
+          email: email,
+          password: password
+        }
+      }).then(user => {
+        let result;
+        if (user === null) {
+          result = {
+            login: 'fail',
+            error: 'not found'
+          }
+        } else {
+          result = {
+            login: 'success',
+            id: user.id,
+            name: user.name,
+            email: user.email
+          };
+        }
+        res.send(result);
+      })
+    } catch (e) {
+      res.send({
+        login: 'fail',
+        error: e
+      })
+    }
   });
 
   router.post('/register', (req, res) => {
