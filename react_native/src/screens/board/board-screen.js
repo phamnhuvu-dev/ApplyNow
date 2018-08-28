@@ -1,11 +1,9 @@
 import React, {Component} from "react";
-import {Platform, StyleSheet, Text, View} from "react-native";
+import {View} from "react-native";
 import SearchBar from "../../components/search-bar";
 import {createMaterialTopTabNavigator} from "react-navigation";
 import ApplyScreen from "./apply/apply-screen";
 import OfferScreen from "./offer/offer-screen";
-import * as Dimensions from "react-native/Libraries/Utilities/Dimensions";
-import TabsBar from "../../components/tabs-bar";
 
 
 const Top = createMaterialTopTabNavigator(

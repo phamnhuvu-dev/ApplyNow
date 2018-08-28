@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Image, TextInput, View} from "react-native";
+import {Image, TextInput, View, Platform} from "react-native";
 
 export default class BoardScreen extends Component {
 
