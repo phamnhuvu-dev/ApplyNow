@@ -1,8 +1,10 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, FlatList, Image} from 'react-native';
+import React, {Component} from "react";
+import {FlatList, Image, Text, View} from "react-native";
 
 import SearchBar from "../../components/search-bar";
 import Avatar from "../../components/avatar";
+import Header from "../../components/header";
+import Icon from "../../components/icon";
 
 export default class MessageScreen extends Component {
 
@@ -10,7 +12,9 @@ export default class MessageScreen extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <SearchBar style={{marginHorizontal: 24, marginVertical: 16}}/>
+        <Header childRight={<Icon source={require('../../res/icon/ic_add_comment.png')}/>}>
+          <SearchBar onChangeText={this._changeText}/>
+        </Header>
         <FlatList
           style={{paddingHorizontal: 24}}
           data={[{key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}, {key: 'b'}, {key: 'a'}]}
@@ -26,14 +30,14 @@ export default class MessageScreen extends Component {
 
   _renderItem = (item, index) => {
     return (
-      <View style={{flexDirection: 'row', marginBottom: 16}}>
+      <View style={{flexDirection: 'row', marginBottom: 16, alignItems: 'center'}}>
         <Avatar source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}/>
-        <View style={{flex: 1}}>
+        <View style={{flex: 1, marginLeft: 8 }}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <Text
               numberOfLines={1}
-              style={{flex: 0.75}}>
-              Name Name Name Name Name Name Name Name Name Name
+              style={{flex: 1}}>
+              Name Name Name Name Name
             </Text>
             <Text
               numberOfLines={1}
@@ -41,8 +45,8 @@ export default class MessageScreen extends Component {
               Time
             </Text>
           </View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text numberOfLines={1} style={{flex: 0.8}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <View style={{flexDirection: 'row'}}>
+            <Text numberOfLines={1} style={{flex: 1}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Vestibulum pellentesque lacus eleifend elit luctus blandit.</Text>
             <Image
               fadeDuration={0}
@@ -60,5 +64,4 @@ export default class MessageScreen extends Component {
       </View>
     );
   };
-
 }

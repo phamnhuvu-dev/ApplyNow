@@ -1,7 +1,5 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image} from 'react-native';
-
-import {createBottomTabNavigator} from 'react-navigation';
+import React, {Component} from "react";
+import {Image} from "react-native";
 import HomeScreen from "./home/home-screen";
 import MessageScreen from "./message/message-screen";
 import BoardScreen from "./board/board-screen";

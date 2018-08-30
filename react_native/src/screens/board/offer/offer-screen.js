@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {FlatList, Image, Platform, StyleSheet, Text, View} from 'react-native';
+import React, {Component} from "react";
+import {FlatList, Image, Platform, StyleSheet, Text, View} from "react-native";
 import SearchBar from "../../../components/search-bar";
 import Avatar from "../../../components/avatar";
 
@@ -7,18 +7,16 @@ export default class OfferScreen extends Component {
 
   _renderItem = (item, index) => {
     return (
-      <View style={{flexDirection: 'row', marginTop: 16}}>
-        <Avatar source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}/>
-        <View style={{flex: 1}}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+      <View style={{flexDirection: "row", marginTop: 16}}>
+        <Avatar source={{uri: "https://facebook.github.io/react-native/docs/assets/favicon.png"}}/>
+        <View style={{flex: 1, marginLeft: 8, justifyContent: 'center'}}>
+          <View style={{flexDirection: "row", justifyContent: "space-between"}}>
             <Text
               numberOfLines={1}
-              style={{flex: 0.75}}>
+              style={{flex: 1}}>
               Name Name Name Name Name Name Name Name Name Name
             </Text>
-            <Text
-              numberOfLines={1}
-              style={{alignSelf: 'flex-end'}}>
+            <Text numberOfLines={1}>
               Time
             </Text>
           </View>
@@ -36,13 +34,13 @@ export default class OfferScreen extends Component {
       <View style={{flex: 1}}>
         <FlatList
           style={{paddingHorizontal: 24}}
-          data={[{key: 'a'}, {key: 'b'}]}
+          data={[{key: "a"}, {key: "b"}]}
           extraData={this.state}
           keyExtractor={this._keyExtractor}
           renderItem={this._renderItem}
         />
       </View>
-    )
+    );
   }
 }
 

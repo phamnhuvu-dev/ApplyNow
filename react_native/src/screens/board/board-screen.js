@@ -4,12 +4,18 @@ import SearchBar from "../../components/search-bar";
 import {createMaterialTopTabNavigator} from "react-navigation";
 import ApplyScreen from "./apply/apply-screen";
 import OfferScreen from "./offer/offer-screen";
+import Header from "../../components/header";
 
 
 const Top = createMaterialTopTabNavigator(
   {
-    OfferScreen,
-    ApplyScreen,
+    Offer: {
+      screen: OfferScreen,
+
+    },
+    Apply: {
+      screen: ApplyScreen
+    },
   },
 
   {
@@ -27,7 +33,14 @@ export default class BoardScreen extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <SearchBar style={{marginHorizontal: 24, marginVertical: 16}}/>
+        <Header>
+          <SearchBar
+            onChangeText={this._changeText}
+            style={{
+              marginVertical: 16
+            }}
+          />
+        </Header>
         <Top></Top>
       </View>
     );

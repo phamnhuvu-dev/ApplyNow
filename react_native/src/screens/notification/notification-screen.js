@@ -23,35 +23,14 @@ export default class NotificationScreen extends Component {
     return (
       <View style={{flexDirection: 'row', marginBottom: 16, marginTop: index === 0 ? 16: 0}}>
         <Avatar source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}/>
-        <View style={{flex: 1}}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text
-              numberOfLines={1}
-              style={{flex: 0.75}}>
-              Name Name Name Name Name Name Name Name Name Name
-            </Text>
-            <Text
-              numberOfLines={1}
-              style={{alignSelf: 'flex-end'}}>
-              Time
-            </Text>
-          </View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text numberOfLines={1} style={{flex: 0.8}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Vestibulum pellentesque lacus eleifend elit luctus blandit.</Text>
-            <Image
-              fadeDuration={0}
-              style={{
-                alignSelf: 'flex-end',
-                height: 20,
-                width: 20,
-                resizeMode: 'center',
-                tintColor: '#070707',
-              }}
-              source={require('../../res/icon/ic_ok_outline.png')}
-            />
-          </View>
+        <View style={{flex: 1, justifyContent: 'center', marginLeft: 8}}>
+          <Text
+            numberOfLines={1}>
+            Name Name Nam
+          </Text>
+          <Text numberOfLines={1} >Lorem ipsum dolo</Text>
         </View>
+        <Avatar source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}/>
       </View>
     );
   };

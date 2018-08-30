@@ -6,7 +6,7 @@ export default class Avatar extends Component {
   render() {
     return (
       <Image
-        style={{width: 50, height: 50, borderRadius: 5, marginRight: 8}}
+        style={{width: 50, height: 50, borderRadius: 5}}
         source={this.props.source}
       />
     )

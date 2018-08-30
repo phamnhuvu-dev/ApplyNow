@@ -82,31 +82,21 @@ const RootStack = createStackNavigator(
   {
     Login: {
       screen: LoginScreen,
-      navigationOptions: {
-        header: null,
-      },
     },
     SignUp: {
       screen: SignUpScreen,
-      navigationOptions: {
-        header: null,
-      },
     },
     ForgotPassword: {
       screen: ForgotPasswordScreen,
-      navigationOptions: {
-        header: null,
-      },
     },
     Main: {
       screen: Bottom,
-      navigationOptions: {
-        header: null,
-      },
     },
   },
   {
-    initialRouteName: "Login"
+    initialRouteName: "Login",
+    headerMode: 'none',
+    cardStyle: { shadowColor: 'transparent' },
   }
 );
 
