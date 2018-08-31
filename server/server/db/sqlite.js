@@ -12,7 +12,7 @@ const sequelize = new Sequelize('database', 'username', 'password', {
   },
 
   // SQLite only
-  storage: './db/database.sqlite'
+  storage: './database.sqlite'
 });
 
 module.exports = sequelize;

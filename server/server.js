@@ -25,7 +25,7 @@ app.prepare()
     server.use(cookieParser());
     server.use(express.static(path.join(__dirname, 'public')));
 
-    const route = require('./route');
+    const route = require('./server/routes');
     route(server, router);
 
     server.get('*', (req, res) => {
