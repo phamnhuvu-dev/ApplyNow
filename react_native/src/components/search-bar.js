@@ -1,30 +1,15 @@
 import React, {Component} from "react";
 import {Image, TextInput, View, Platform} from "react-native";
+import Icon from "./icon";
 
-export default class BoardScreen extends Component {
-
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: ''
-    }
-  }
-
-  _changeText = (text) => {
-    this.setState({
-      text: text
-    })
-  };
+export default class SearchBar extends Component {
 
   render() {
-    let marginLeft = Platform.OS === "ios"? 8: 0;
     return (
       <View style={[
         {
-          backgroundColor: 'white',
           borderWidth: 1,
-          borderColor: '#9c9c9c',
+          borderColor: 'white',
           flexDirection: 'row',
           borderRadius: 5
         },
@@ -32,23 +17,18 @@ export default class BoardScreen extends Component {
       ]}>
         <TextInput
           style={{
-            marginLeft: marginLeft,
-            flex: 0.9,
-            height: 40
+            padding: 0,
+            marginLeft: 8,
+            flex: 1,
+            height: 30,
+            color: 'white'
           }}
           placeholder={"Search..."}
-          onChangeText={this._changeText}
+          placeholderTextColor={'white'}
+          onChangeText={this.props.onChangeText}
         />
+        <Icon source={require('../res/icon/ic_search.png')}/>
 
-        <Image
-          fadeDuration={0}
-          style={{
-            height: 40,
-            resizeMode: 'center',
-            flex: 0.1, tintColor: '#070707',
-          }}
-          source={require('../res/icon/ic_search.png')}
-        />
         {/*<Text>{this.state.text}</Text>*/}
       </View>
     )
