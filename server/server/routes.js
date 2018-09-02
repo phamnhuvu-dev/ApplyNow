@@ -19,9 +19,18 @@ const routes = (server, router) => {
   const post_api = require("./routes/api/post-api");
   server.use('/api/post', post_api(express.Router(), User, Post));
 
+  const Apply = require('./db/apply-db')(sequelize);
+  const apply_api = require("./routes/api/apply-api");
+  server.use('/api/apply', apply_api(express.Router(), Apply, Post, User));
+
   Post.belongsTo(User);
   User.hasMany(Post);
 
+  Apply.belongsTo(Post);
+  Post.hasMany(Apply);
+
+  Apply.belongsTo(User);
+  User.hasMany(Apply);
 
   User.sync({force: true}).then(() => {
     return User.create({
@@ -75,6 +84,16 @@ const routes = (server, router) => {
   }).then(post => {
     post.setUser(1);
   });
+
+  Apply.sync({force: true}).then(() => {
+    return Apply.create({
+      status: 1,
+    });
+  }).then(apply => {
+    apply.setUser(1);
+    apply.setPost(1)
+  });
+
 };
 
 module.exports = routes;
