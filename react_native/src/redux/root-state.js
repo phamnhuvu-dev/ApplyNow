@@ -3,10 +3,7 @@ import MessageState from "./message/message-state";
 import BoardState from "./board/board-state";
 import NotificationState from "./notification/notification-state";
 
-
 export default class RootState {
-
-
   constructor(home = new HomeState(),
               message = new MessageState(),
               board = new BoardState(),
