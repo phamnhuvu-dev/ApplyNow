@@ -23,13 +23,12 @@ export default class SearchBar extends Component {
             height: 30,
             color: 'white'
           }}
+          selectionColor={'white'}
           placeholder={"Search..."}
           placeholderTextColor={'white'}
           onChangeText={this.props.onChangeText}
         />
         <Icon source={require('../res/icon/ic_search.png')}/>
-
-        {/*<Text>{this.state.text}</Text>*/}
       </View>
     )
   }
