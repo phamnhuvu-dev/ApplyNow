@@ -5,6 +5,7 @@ import MessageScreen from "./message/message-screen";
 import BoardScreen from "./board/board-screen";
 import NotificationScreen from "./notification/notification-screen";
 import {createMaterialBottomTabNavigator} from "react-navigation-material-bottom-tabs";
+import InfoScreen from "./info/info-screen";
 
 const Bottom = createMaterialBottomTabNavigator(
   {
@@ -52,9 +53,18 @@ const Bottom = createMaterialBottomTabNavigator(
         )
       }
     },
-    // Message: MessageScreen,
-    // Board: BoardScreen,
-    // Notification: NotificationScreen
+
+    Information: {
+      screen: InfoScreen,
+      navigationOptions: {
+        tabBarIcon: ({focused, tintColor}) => (
+          <Image
+            source={require('../res/icon/ic_person.png')}
+            style={[ {width: 28, height: 28, tintColor: tintColor, resizeMode: 'stretch'}]}
+          />
+        )
+      }
+    }
   }, {
     barStyle: {
       backgroundColor: '#F06767',

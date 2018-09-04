@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {View, Text} from "react-native";
 import {main, whiteBlur50} from "../../res/colors";
-import WhiteTextInput from "../../components/white-textinput";
+import WhiteTextInput from "../../components/white-text-input";
 import {WhiteButton} from "../../components/button";
 
 export default class ForgotPasswordScreen extends Component {

@@ -1,17 +1,19 @@
 import React, {Component} from "react";
-import {Platform, StyleSheet, Text, View, TextInput, TouchableOpacity} from "react-native";
+import {AsyncStorage, Text, TouchableOpacity, View} from "react-native";
 import {main, whiteBlur50} from "../../res/colors";
-import WhiteTextInput from "../../components/white-textinput";
+import WhiteTextInput from "../../components/white-text-input";
 import {BlueButton, WhiteButton} from "../../components/button";
-import {AxiosInstance as axios} from "axios";
+import {login} from "../../modules/user-api";
+import {connect} from "react-redux";
+import {syncUser} from "../../redux/user/user-actions";
 
-export default class LoginScreen extends Component {
 
+class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     };
   }
 
@@ -23,18 +25,25 @@ export default class LoginScreen extends Component {
   _goForgotPassword = () => this.props.navigation.navigate("ForgotPassword");
 
   _login = () => {
-    axios.post('10.0.2.2:3000/api/', {
-      firstName: this.state.email,
-      lastName: this.state.password,
-    })
+    login(this.state.email, this.state.password)
       .then(response => {
-        console.log(response);
-        this._goMain();
+        if (response.data.login === "success") {
+          this._storeData(response.data)
+            .then(this._goMain)
+            .catch(error => {
+              console.log(error);
+            });
+          this.props.dispatch(syncUser(response.data));
+        }
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
+  };
 
+  _storeData = async (user) => {
+    await AsyncStorage.setItem("login", "1");
+    await AsyncStorage.setItem("user", JSON.stringify(user));
   };
 
   render() {
@@ -68,3 +77,5 @@ export default class LoginScreen extends Component {
     );
   }
 }
+
+export default connect()(LoginScreen)

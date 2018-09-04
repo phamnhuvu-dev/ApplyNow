@@ -11,15 +11,15 @@ const routes = (server, router) => {
       console.error('Unable to connect to the database:', err);
     });
 
-  const User = require('./db/user-db')(sequelize);
+  const User = require('./db/user')(sequelize);
   const user_api = require("./routes/api/user-api");
   server.use('/api/user', user_api(express.Router(), User));
 
-  const Post = require('./db/post-db')(sequelize);
+  const Post = require('./db/post')(sequelize);
   const post_api = require("./routes/api/post-api");
   server.use('/api/post', post_api(express.Router(), User, Post));
 
-  const Apply = require('./db/apply-db')(sequelize);
+  const Apply = require('./db/apply')(sequelize);
   const apply_api = require("./routes/api/apply-api");
   server.use('/api/apply', apply_api(express.Router(), Apply, Post, User));
 
