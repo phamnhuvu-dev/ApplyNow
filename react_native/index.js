@@ -19,6 +19,7 @@ import {main} from "./src/res/colors";
 import SignUpScreen from "./src/screens/account/signup-screen";
 import ForgotPasswordScreen from "./src/screens/account/forgot-password-screen";
 import InfoScreen from "./src/screens/info/info-screen";
+import CameraScreen from "./src/screens/camera-screen";
 
 
 const Bottom = createMaterialBottomTabNavigator(
@@ -127,6 +128,9 @@ class App extends Component {
       },
       ForgotPassword: {
         screen: ForgotPasswordScreen,
+      },
+      Camera: {
+        screen: CameraScreen
       },
       Main: {
         screen: Bottom,

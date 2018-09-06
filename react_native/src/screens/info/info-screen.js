@@ -1,14 +1,18 @@
 import React, {Component} from "react";
-import {Image, View} from "react-native";
+import {Image, View, Button} from "react-native";
 
 
-export default class InfoScreen extends Component{
+export default class InfoScreen extends Component {
+
+  _openCamera = () => {
+    this.props.navigation.navigate('Camera')
+  };
 
   render() {
     return (
       <View>
-
+        <Button onPress={this._openCamera} title="Camera"/>
       </View>
-    )
+    );
   }
 }

@@ -51,7 +51,9 @@
 		</dict>
 	</dict>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-    <false/>
+	<false/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Need to save photos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Entypo.ttf</string>
