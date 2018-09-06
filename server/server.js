@@ -1,16 +1,15 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 
-const compression = require('compression');
-const next = require('next');
-
+const compression = require("compression");
+const next = require("next");
 
 const port = parseInt(process.env.PORT, 10) || 3000;
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
+const dev = process.env.NODE_ENV !== "production";
+const app = next({dev});
 const handle = app.getRequestHandler();
 
 app.prepare()
@@ -18,30 +17,29 @@ app.prepare()
     const server = express();
     const router = express.Router();
 
-    server.use(compression({ level: 9, threshold: 0 }));
-    server.use(logger('dev'));
+    server.use(compression({level: 9, threshold: 0}));
+    server.use(logger("dev"));
     server.use(express.json());
-    server.use(express.urlencoded({ extended: false }));
+    server.use(express.urlencoded({extended: false}));
     server.use(cookieParser());
-    server.use(express.static(path.join(__dirname, 'public')));
+    server.use(express.static(path.join(__dirname, "public")));
 
-    const route = require('./server/routes');
+    const route = require("./server/routes");
     route(server, router);
 
-    server.get('*', (req, res) => {
-      return handle(req, res)
+    server.get("*", (req, res) => {
+      return handle(req, res);
     });
 
     server.listen(port, (err) => {
       if (err) throw err;
-      console.log(`> Ready on http://localhost:${port}`)
-    })
+      console.log(`> Ready on http://localhost:${port}`);
+    });
   });
 
 // // view engine setup
 // server.set('views', path.join(__dirname, 'views'));
 // server.set('view engine', 'pug');
-
 
 
 // server.use('/', indexRouter);

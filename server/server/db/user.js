@@ -5,7 +5,9 @@ const User = (sequelize) =>
       name: {type: Sequelize.STRING},
       email: {type: Sequelize.STRING, unique: true},
       password: {type: Sequelize.STRING},
-      description: {type: Sequelize.STRING}
+      description: {type: Sequelize.STRING},
+      image: {type: Sequelize.STRING},
+      phone: {type: Sequelize.STRING},
     },
     {underscored: true}
   );
