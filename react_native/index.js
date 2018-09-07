@@ -15,7 +15,7 @@ import NotificationScreen from "./src/redux/notification/notification-screen";
 import {Provider} from "react-redux";
 import store from "./src/redux/store";
 import LoginScreen from "./src/redux/user/account/login-screen";
-import {main} from "./src/res/colors";
+import {mainColor} from "./src/res/colors";
 import SignUpScreen from "./src/redux/user/account/signup-screen";
 import ForgotPasswordScreen from "./src/redux/user/account/forgot-password-screen";
 import InfoScreen from "./src/redux/information/info-screen";
@@ -151,7 +151,7 @@ class App extends Component {
     }
     return this.state.check ? (
       <Provider store={store}>
-        <View style={{flex: 1, backgroundColor: main}}>
+        <View style={{flex: 1, backgroundColor: mainColor}}>
           <StatusBar
             barStyle="light-content"
             backgroundColor="#F06767"

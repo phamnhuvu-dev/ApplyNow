@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {View} from "react-native";
+import {View, TouchableOpacity} from "react-native";
 
 export default class Header extends Component {
   render() {
@@ -18,7 +18,9 @@ export default class Header extends Component {
         }}>
           {this.props.children}
         </View>
-        {this.props.childRight}
+        <TouchableOpacity onPress={this.props.onPressRightChild}>
+          {this.props.childRight}
+        </TouchableOpacity>
       </View>
     );
   }

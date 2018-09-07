@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Text, TouchableOpacity} from "react-native";
-import {main, blue} from "../res/colors";
+import {mainColor, blueColor} from "../res/colors";
 
 const white_style = {
   touchable: {
@@ -14,7 +14,7 @@ const white_style = {
 
   title: {
     fontWeight: "bold",
-    color: main,
+    color: mainColor,
   }
 };
 
@@ -24,7 +24,7 @@ const blue_style = {
     height: 40,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: blue,
+    backgroundColor: blueColor,
     borderRadius: 5,
   },
 
