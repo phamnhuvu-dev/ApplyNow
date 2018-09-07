@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {View} from "react-native";
-import {main, whiteBlur50} from "../../res/colors";
-import WhiteTextInput from "../../components/white-text-input";
-import {WhiteButton} from "../../components/button";
+import {main, whiteBlur50} from "../../../res/colors";
+import WhiteTextInput from "../../../components/white-text-input";
+import {WhiteButton} from "../../../components/button";
 
 export default class SignUpScreen extends Component {
 

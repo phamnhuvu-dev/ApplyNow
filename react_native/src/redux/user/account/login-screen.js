@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import {AsyncStorage, Text, TouchableOpacity, View} from "react-native";
-import {main, whiteBlur50} from "../../res/colors";
-import WhiteTextInput from "../../components/white-text-input";
-import {BlueButton, WhiteButton} from "../../components/button";
-import {login} from "../../modules/user-api";
+import {main, whiteBlur50} from "../../../res/colors";
+import WhiteTextInput from "../../../components/white-text-input";
+import {BlueButton, WhiteButton} from "../../../components/button";
+import {login} from "../../../modules/user-api";
 import {connect} from "react-redux";
-import {syncUser} from "../../redux/user/user-actions";
+import {syncUser} from "../user-actions";
 
 
 class LoginScreen extends Component {

@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import {Image} from "react-native";
-import HomeScreen from "./home/home-screen";
-import MessageScreen from "./message/message-screen";
-import BoardScreen from "./board/board-screen";
-import NotificationScreen from "./notification/notification-screen";
+import HomeScreen from "../redux/home/home-screen";
+import MessageScreen from "../redux/message/message-screen";
+import BoardScreen from "../redux/board/board-screen";
+import NotificationScreen from "../redux/notification/notification-screen";
 import {createMaterialBottomTabNavigator} from "react-navigation-material-bottom-tabs";
-import InfoScreen from "./info/info-screen";
+import InfoScreen from "../redux/information/info-screen";
 
 const Bottom = createMaterialBottomTabNavigator(
   {

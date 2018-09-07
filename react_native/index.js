@@ -8,17 +8,17 @@ import MainScreen from "./src/screens/main-screen";
 import React, {Component} from "react";
 import {Platform, StyleSheet, Text, View, StatusBar} from "react-native";
 import {createMaterialBottomTabNavigator} from "react-navigation-material-bottom-tabs";
-import HomeScreen from "./src/screens/home/home-screen";
-import MessageScreen from "./src/screens/message/message-screen";
-import BoardScreen from "./src/screens/board/board-screen";
-import NotificationScreen from "./src/screens/notification/notification-screen";
+import HomeScreen from "./src/redux/home/home-screen";
+import MessageScreen from "./src/redux/message/message-screen";
+import BoardScreen from "./src/redux/board/board-screen";
+import NotificationScreen from "./src/redux/notification/notification-screen";
 import {Provider} from "react-redux";
 import store from "./src/redux/store";
-import LoginScreen from "./src/screens/account/login-screen";
+import LoginScreen from "./src/redux/user/account/login-screen";
 import {main} from "./src/res/colors";
-import SignUpScreen from "./src/screens/account/signup-screen";
-import ForgotPasswordScreen from "./src/screens/account/forgot-password-screen";
-import InfoScreen from "./src/screens/info/info-screen";
+import SignUpScreen from "./src/redux/user/account/signup-screen";
+import ForgotPasswordScreen from "./src/redux/user/account/forgot-password-screen";
+import InfoScreen from "./src/redux/information/info-screen";
 import CameraScreen from "./src/screens/camera-screen";
 
 
