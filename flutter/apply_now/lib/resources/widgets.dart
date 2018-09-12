@@ -1,4 +1,4 @@
-import 'package:apply_now/resource/colors.dart';
+import 'package:apply_now/resources/colors.dart';
 import 'package:apply_now/widgets/main_container.dart';
 import 'package:flutter/material.dart';
 

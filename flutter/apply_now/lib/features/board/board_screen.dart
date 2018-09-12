@@ -1,4 +1,4 @@
-import 'package:apply_now/resource/colors.dart';
+import 'package:apply_now/resources/colors.dart';
 import 'package:apply_now/widgets/header.dart';
 import 'package:apply_now/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
@@ -87,23 +87,3 @@ class _StateBoardScreen extends State<BoardScreen> {
     );
   }
 }
-
-//return DefaultTabController(
-//length: 3,
-//child: Scaffold(
-//appBar: TabBar(
-//tabs: [
-//Tab(icon: Icon(Icons.directions_car)),
-//Tab(icon: Icon(Icons.directions_transit)),
-//Tab(icon: Icon(Icons.directions_bike)),
-//],
-//),
-//body: TabBarView(
-//children: [
-//Icon(Icons.directions_car),
-//Icon(Icons.directions_transit),
-//Icon(Icons.directions_bike),
-//],
-//),
-//),
-//);

@@ -2,7 +2,7 @@ import 'package:apply_now/features/board/board_screen.dart';
 import 'package:apply_now/features/home/home_screen.dart';
 import 'package:apply_now/features/message/message_screen.dart';
 import 'package:apply_now/features/notification/notification_screen.dart';
-import 'package:apply_now/resource/colors.dart';
+import 'package:apply_now/resources/colors.dart';
 import 'package:apply_now/widgets/main_container.dart';
 import 'package:flutter/material.dart';
 
