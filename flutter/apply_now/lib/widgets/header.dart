@@ -5,8 +5,9 @@ class Header extends StatelessWidget {
   final Widget childLeft;
   final Widget childRight;
   final Widget child;
+  final onTapRightChild;
 
-  Header({Key key, this.child, this.childLeft, this.childRight})
+  Header({Key key, this.child, this.childLeft, this.childRight, this.onTapRightChild})
       : super(key: key);
 
   @override
@@ -25,7 +26,8 @@ class Header extends StatelessWidget {
       row.children.insert(0, childLeft);
     }
     if (childRight != null) {
-      row.children.insert(row.children.length, childRight);
+      final tap = GestureDetector(child: childRight, onTap: onTapRightChild,);
+      row.children.insert(row.children.length, tap);
     }
 
     return Container(

@@ -14,7 +14,15 @@ class _StateCreatePostDialog extends State<CreatePostDialog> {
       child: Container(
         color: Colors.white,
         child: Column(
-          children: <Widget>[],
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text("CREATE POST"),
+            TextField(),
+            Row(children: <Widget>[
+              FlatButton(onPressed: () {}, child: Text("Cancel")),
+              FlatButton(onPressed: () {}, child: Text("Yes")),
+            ],)
+          ],
         ),
       ),
     );

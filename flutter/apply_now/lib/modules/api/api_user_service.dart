@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:apply_now/modules/api_service.dart';
+import 'package:apply_now/modules/api/api_service.dart';
 import 'package:http/http.dart' as http;
 import 'package:apply_now/models/user.dart';
 
 final route = '${host}user/';
 
 Future<User> login(email, password) async {
-  final response = await http.Client().post(
+  final response = await http.post(
     '${route}login',
     body: {'email': email, 'password': password},
   );
@@ -18,3 +18,10 @@ Future<User> login(email, password) async {
     return User.fromJson(userMap);
   }
 }
+
+
+//Future<User> register() async {
+//  final response  = await http.post('${route}register',
+//
+//  )
+//}

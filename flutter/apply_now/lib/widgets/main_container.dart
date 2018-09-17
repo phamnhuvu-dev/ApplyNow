@@ -11,7 +11,6 @@ class MainContainer extends StatelessWidget {
     return Container(
       color: color,
       child: SafeArea(
-
         bottom: false,
         child: child,
       ),

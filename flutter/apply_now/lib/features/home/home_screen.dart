@@ -1,3 +1,6 @@
+import 'package:apply_now/models/post.dart';
+import 'package:apply_now/widgets/dialog/create_post_dialog.dart';
+import 'package:apply_now/widgets/dialog/loading_dialog.dart';
 import 'package:apply_now/widgets/header.dart';
 import 'package:apply_now/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
@@ -11,13 +14,30 @@ class HomeScreen extends StatefulWidget {
 
 class _StateHomeScreen extends State<HomeScreen> {
 
+  final Post post = Post();
+
+  final _showDialog = (context) => showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: new Text("My Super title"),
+              content: new Text("Hello World"),
+            ),
+      );
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         Header(
           child: SearchBar(),
-          childRight: Icon(Icons.note_add, color: Colors.white,),
+          childRight: Icon(
+            Icons.note_add,
+            color: Colors.white,
+          ),
+          onTapRightChild: () => showDialog(
+                context: context,
+                builder: (context) => CreatePostDialog(),
+              ),
         ),
         Flexible(
           child: ListView.builder(

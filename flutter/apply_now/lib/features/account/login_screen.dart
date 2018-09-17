@@ -1,9 +1,10 @@
-import 'package:apply_now/modules/api_user_service.dart';
+import 'package:apply_now/modules/api/api_user_service.dart';
 import 'package:apply_now/resources/colors.dart';
 import 'package:apply_now/resources/strings.dart';
 import 'package:apply_now/resources/widgets.dart';
-import 'package:apply_now/widgets/AppTextField.dart';
-import 'package:apply_now/widgets/main_container.dart';
+import 'package:apply_now/widgets/app_text_field.dart';
+import 'package:apply_now/widgets/dialog/loading_dialog.dart';
+import 'package:apply_now/widgets/dialog/message_dialog.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -14,22 +15,39 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _StateLoginScreen extends State<LoginScreen> {
-
   String email = '';
   String password = '';
 
   //Click
-  final _showMainScreen = (context) => Navigator.pushNamed(context, "/main");
-  final _showSignUpScreen =
-      (context) => Navigator.pushNamed(context, "/signup");
-  final _showForgotPasswordScreen =
-      (context) => Navigator.pushNamed(context, "/forgor_password");
+  _showMainScreen() => Navigator.pushNamed(context, "/main");
 
-  final _login = (context, String email, String password, showMainScreen) =>
-      login(email, password).then((user) {
-        print(user);
-        showMainScreen(context);
-      }).catchError((error) => print(error));
+  _showSignUpScreen() => Navigator.pushNamed(context, "/signup");
+
+  _showForgotPasswordScreen() =>
+      Navigator.pushNamed(context, "/forgor_password");
+
+  _login(String email, String password) {
+    showDialog(
+      context: context,
+      builder: (context) => LoadingDialog(
+            message: "Logging...",
+          ),
+    );
+    login(email, password).then(
+      (user) {
+        Navigator.of(context).pop();
+        _showMainScreen();
+      },
+    ).catchError((error) {
+      Navigator.of(context).pop();
+      showDialog(
+        context: context,
+        builder: (context) => MessageDialog(
+              message: error.toString(),
+            ),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,16 +68,16 @@ class _StateLoginScreen extends State<LoginScreen> {
             color: Colors.white,
             textColor: AppColors.main,
             onPressed: () =>
-                _login(context, email.trim(), password.trim(), _showMainScreen),
+                _login(email.trim(), password.trim()),
           ),
           AppWidgets.createButton(
             title: "SIGN UP",
             color: AppColors.blue,
             textColor: Colors.white,
-            onPressed: () => _showSignUpScreen(context),
+            onPressed: () => _showSignUpScreen(),
           ),
           GestureDetector(
-            onTap: () => _showForgotPasswordScreen(context),
+            onTap: () => _showForgotPasswordScreen(),
             child: Text(
               "Forgot password?",
               style: TextStyle(

@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         Locale('en', 'US'),
         Locale('vi', 'VN'),
       ],
-      home: new LoginScreen(),
+      home: MainScreen(),
       routes: <String, WidgetBuilder>{
         '/signup': (BuildContext context) => SignUpScreen(),
         '/forgor_password': (BuildContext context) => ForgotPasswordScreen(),
