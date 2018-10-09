@@ -1,5 +1,7 @@
+"use strict";
+
 import React, {Component} from 'react';
-import {FlatList, Image, Platform, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 import Avatar from "../../components/avatar";
 
 export default class NotificationScreen extends Component {

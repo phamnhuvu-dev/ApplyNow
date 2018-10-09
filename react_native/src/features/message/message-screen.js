@@ -1,3 +1,5 @@
+"use strict";
+
 import React, {Component} from "react";
 import {FlatList, Image, Text, View} from "react-native";
 

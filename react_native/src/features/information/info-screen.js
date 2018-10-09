@@ -1,3 +1,5 @@
+"use strict";
+
 import React, {Component} from "react";
 import {Text, Image, View, Button} from "react-native";
 import {AppContext} from "../../../App";

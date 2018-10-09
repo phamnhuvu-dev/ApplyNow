@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -7,7 +9,7 @@
  */
 
 import React, {Component} from 'react';
-import {AsyncStorage, Image, Platform, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {AsyncStorage, Image, StatusBar, View} from 'react-native';
 import {createStackNavigator, SafeAreaView} from "react-navigation";
 import LoginScreen from "./src/features/account/login-screen";
 import SignUpScreen from "./src/features/account/signup-screen";

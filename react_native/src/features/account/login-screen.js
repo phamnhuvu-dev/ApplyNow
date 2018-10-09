@@ -1,3 +1,5 @@
+"use strict";
+
 import React, {Component} from "react";
 import {AsyncStorage, Text, TouchableOpacity, View} from "react-native";
 import {mainColor, whiteBlur50Color} from "../../res/colors";

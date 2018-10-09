@@ -1,3 +1,5 @@
+"use strict";
+
 import React, {Component} from "react";
 import {View} from "react-native";
 import SearchBar from "../../components/search-bar";
