@@ -1,14 +1,11 @@
 import React, {Component} from "react";
 import {AsyncStorage, Text, TouchableOpacity, View} from "react-native";
-import {mainColor, whiteBlur50Color} from "../../../res/colors";
-import WhiteTextInput from "../../../components/white-text-input";
-import {BlueButton, WhiteButton} from "../../../components/button";
-import {login} from "../../../modules/user-api";
-import {connect} from "react-redux";
-import {syncUser} from "../user-actions";
+import {mainColor, whiteBlur50Color} from "../../res/colors";
+import WhiteTextInput from "../../components/white-text-input";
+import {BlueButton, WhiteButton} from "../../components/button";
+import {login} from "../../modules/user-api";
 
-
-class LoginScreen extends Component {
+export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,20 +22,21 @@ class LoginScreen extends Component {
   _goForgotPassword = () => this.props.navigation.navigate("ForgotPassword");
 
   _login = () => {
-    login(this.state.email, this.state.password)
-      .then(response => {
-        if (response.data.login === "success") {
-          this._storeData(response.data)
-            .then(this._goMain)
-            .catch(error => {
-              console.log(error);
-            });
-          this.props.dispatch(syncUser(response.data));
-        }
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    this._goMain();
+    // login(this.state.email, this.state.password)
+    //   .then(response => {
+    //     if (response.data.login === "success") {
+    //       this._storeData(response.data)
+    //         .then(this._goMain)
+    //         .catch(error => {
+    //           console.log(error);
+    //         });
+    //       // this.props.dispatch(syncUser(response.data));
+    //     }
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
   };
 
   _storeData = async (user) => {
@@ -77,5 +75,3 @@ class LoginScreen extends Component {
     );
   }
 }
-
-export default connect()(LoginScreen)
