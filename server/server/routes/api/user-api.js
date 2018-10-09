@@ -10,7 +10,7 @@ const user_api = (router, User) => {
       const email = req.body.email;
       const password = req.body.password;
       User.findOne({
-        attributes: ["id", "name", "email"],
+        attributes: ["id", "name", "email", "description"],
         where: {
           email: email,
           password: password
@@ -27,7 +27,8 @@ const user_api = (router, User) => {
             login: "success",
             id: user.id,
             name: user.name,
-            email: user.email
+            email: user.email,
+            description: user.description
           };
         }
         res.send(result);
