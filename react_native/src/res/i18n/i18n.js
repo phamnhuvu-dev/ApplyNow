@@ -17,3 +17,4 @@ export default I18n;
 export const I18n_full_name = I18n.t("full_name");
 export const I18n_email = I18n.t("email");
 export const I18n_phone = I18n.t("phone");
+export const I18n_description = I18n.t("description");

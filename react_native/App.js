@@ -12,7 +12,7 @@ import React, {Component} from 'react';
 import {AsyncStorage, Image, StatusBar, View} from 'react-native';
 import {createStackNavigator, SafeAreaView} from "react-navigation";
 import LoginScreen from "./src/features/account/login-screen";
-import SignUpScreen from "./src/features/account/signup-screen";
+import SignUpScreen from "./src/features/account/signup/signup-screen";
 import ForgotPasswordScreen from "./src/features/account/forgot-password-screen";
 import CameraScreen from "./src/screens/camera-screen";
 import {createMaterialBottomTabNavigator} from "react-navigation-material-bottom-tabs";
@@ -38,7 +38,7 @@ export default class App extends Component {
         "Phạm Như Vũ",
         "phamnhuvu.ou@gmail.com",
         "01282027040",
-        "Mobile developer"
+        "Mobile developer",
       ),
     };
   }

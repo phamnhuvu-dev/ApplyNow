@@ -26,7 +26,7 @@ export default class InfoScreen extends Component {
                 <Text>{`${I18n_full_name} ${user.name}`}</Text>
                 <Text>{`${I18n_email} ${user.email}`}</Text>
                 <Text>{`${I18n_phone} ${user.phone}`}</Text>
-                <Text>{`Mô tả: ${user.desc}`}</Text>
+                <Text>{`Mô tả: ${user.description}`}</Text>
               </View>
             </View>
             <Button onPress={() => {

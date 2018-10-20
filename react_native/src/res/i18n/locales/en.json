@@ -1,5 +1,6 @@
 {
   "full_name": "Full name:",
   "email": "Email:",
-  "phone": "Phone:"
+  "phone": "Phone:",
+  "description": "Description"
 }

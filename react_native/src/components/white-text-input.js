@@ -16,6 +16,7 @@ export default class WhiteTextInput extends Component {
           borderColor: "white",
           borderBottomWidth: 1,
         }}
+        underlineColorAndroid='transparent'
         selectionColor={'white'}
         placeholder={this.props.placeholder}
         placeholderTextColor={whiteBlur99Color}
