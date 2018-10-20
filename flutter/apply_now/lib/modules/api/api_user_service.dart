@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:apply_now/modules/api/api_service.dart';
 import 'package:http/http.dart' as http;
-import 'package:apply_now/models/user.dart';
+import 'package:apply_now/data/models/user.dart';
 
 final route = '${host}user/';
 

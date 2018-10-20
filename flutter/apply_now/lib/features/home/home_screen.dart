@@ -1,6 +1,4 @@
-import 'package:apply_now/models/post.dart';
 import 'package:apply_now/widgets/dialog/create_post_dialog.dart';
-import 'package:apply_now/widgets/dialog/loading_dialog.dart';
 import 'package:apply_now/widgets/header.dart';
 import 'package:apply_now/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +12,6 @@ class HomeScreen extends StatefulWidget {
 
 class _StateHomeScreen extends State<HomeScreen> {
 
-  final Post post = Post();
 
   final _showDialog = (context) => showDialog(
         context: context,

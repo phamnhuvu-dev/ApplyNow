@@ -1,6 +1,5 @@
 import 'package:apply_now/modules/api/api_user_service.dart';
 import 'package:apply_now/resources/colors.dart';
-import 'package:apply_now/resources/strings.dart';
 import 'package:apply_now/resources/widgets.dart';
 import 'package:apply_now/widgets/app_text_field.dart';
 import 'package:apply_now/widgets/dialog/loading_dialog.dart';
@@ -55,16 +54,16 @@ class _StateLoginScreen extends State<LoginScreen> {
       child: Column(
         children: <Widget>[
           AppTextField(
-            hint: Strings.of(context).email(),
+//            hint: Strings.of(context).email(),
             onChanged: (text) => email = text,
           ),
           AppTextField(
             secure: true,
-            hint: Strings.of(context).password(),
+//            hint: Strings.of(context).password(),
             onChanged: (text) => password = text,
           ),
           AppWidgets.createButton(
-            title: Strings.of(context).login(),
+//            title: Strings.of(context).login(),
             color: Colors.white,
             textColor: AppColors.main,
             onPressed: () =>
