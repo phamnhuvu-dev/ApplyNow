@@ -2,9 +2,9 @@
 
 import React, {Component} from "react";
 import {Text, Image, View, Button} from "react-native";
-import {AppContext} from "../../../App";
-import User from "../../models/user";
-import {I18n_email, I18n_full_name, I18n_phone} from '../../res/i18n/i18n';
+import {AppContext} from "../../App";
+import User from "../../data/models/user";
+import {I18n_email, I18n_full_name, I18n_phone} from '../../statics/i18n/i18n';
 
 export default class InfoScreen extends Component {
 

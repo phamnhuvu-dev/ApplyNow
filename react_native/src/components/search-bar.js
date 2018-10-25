@@ -28,7 +28,7 @@ export default class SearchBar extends Component {
           placeholderTextColor={'white'}
           onChangeText={this.props.onChangeText}
         />
-        <Icon source={require('../res/icon/ic_search.png')}/>
+        <Icon source={require('../statics/icon/ic_search.png')}/>
       </View>
     )
   }

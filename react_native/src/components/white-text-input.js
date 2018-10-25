@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {TextInput, Platform, View} from "react-native";
-import {whiteBlur99Color} from "../res/colors";
+import {whiteBlur99Color} from "../statics/Colors";
 
 export default class WhiteTextInput extends Component {
 

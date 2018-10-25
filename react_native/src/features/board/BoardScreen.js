@@ -4,8 +4,8 @@ import React, {Component} from "react";
 import {View} from "react-native";
 import SearchBar from "../../components/search-bar";
 import {createMaterialTopTabNavigator} from "react-navigation";
-import ApplyScreen from "./apply/apply-screen";
-import OfferScreen from "./offer/offer-screen";
+import ApplyScreen from "./apply/ApplyScreen";
+import OfferScreen from "./offer/OfferScreen";
 import Header from "../../components/header";
 
 

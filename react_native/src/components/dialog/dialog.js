@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {TouchableOpacity, TouchableWithoutFeedback} from "react-native";
-import {blackBlur80Color} from "../../res/colors";
+import {blackBlur80Color} from "../../statics/Colors";
 
 export default class Dialog extends Component {
 

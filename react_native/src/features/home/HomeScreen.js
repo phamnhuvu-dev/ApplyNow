@@ -64,7 +64,7 @@ export default class HomeScreen extends Component {
 
         <Header
           onPressRightChild={this._showDialog}
-          childRight={<Icon source={require("../../res/icon/ic_note_add.png")}/>}>
+          childRight={<Icon source={require("../../statics/icon/ic_note_add.png")}/>}>
           <SearchBar
             onChangeText={this._changeText}
           />

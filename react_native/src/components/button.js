@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Text, TouchableOpacity} from "react-native";
-import {mainColor, blueColor} from "../res/colors";
+import {mainColor, blueColor} from "../statics/Colors";
 
 const white_style = {
   touchable: {

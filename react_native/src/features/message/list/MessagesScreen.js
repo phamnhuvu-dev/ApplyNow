@@ -3,13 +3,13 @@
 import React, {Component} from "react";
 import {FlatList, Image, Text, View} from "react-native";
 
-import SearchBar from "../../components/search-bar";
-import Avatar from "../../components/avatar";
-import Header from "../../components/header";
-import Icon from "../../components/icon";
-import CreateChatGroupDialog from "../../components/dialog/create-chat-group-dialog";
+import SearchBar from "../../../components/search-bar";
+import Avatar from "../../../components/avatar";
+import Header from "../../../components/header";
+import Icon from "../../../components/icon";
+import CreateChatGroupDialog from "../../../components/dialog/create-chat-group-dialog";
 
-export default class MessageScreen extends Component {
+export default class MessagesScreen extends Component {
 
   constructor(props) {
     super(props);
@@ -30,7 +30,7 @@ export default class MessageScreen extends Component {
       <View style={{flex: 1}}>
         <Header
           onPressRightChild={this._showCreateChatGroupOpened}
-          childRight={<Icon source={require("../../res/icon/ic_add_comment.png")}/>}>
+          childRight={<Icon source={require("../../../statics/icon/ic_add_comment.png")}/>}>
           <SearchBar onChangeText={this._changeText}/>
         </Header>
         <FlatList
@@ -76,7 +76,7 @@ export default class MessageScreen extends Component {
                 resizeMode: "center",
                 tintColor: "#070707",
               }}
-              source={require("../../res/icon/ic_ok_outline.png")}
+              source={require("../../../statics/icon/ic_ok_outline.png")}
             />
           </View>
         </View>

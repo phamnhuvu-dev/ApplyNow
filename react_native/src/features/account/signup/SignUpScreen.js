@@ -2,7 +2,7 @@
 
 import React, {Component} from "react";
 import {View} from "react-native";
-import {mainColor, whiteBlur50Color} from "../../../res/colors";
+import {mainColor, whiteBlur50Color} from "../../../statics/Colors";
 import WhiteTextInput from "../../../components/white-text-input";
 import {WhiteButton} from "../../../components/button";
 

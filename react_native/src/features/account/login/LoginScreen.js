@@ -2,10 +2,11 @@
 
 import React, {Component} from "react";
 import {AsyncStorage, Text, TouchableOpacity, View} from "react-native";
-import {mainColor, whiteBlur50Color} from "../../res/colors";
-import WhiteTextInput from "../../components/white-text-input";
-import {BlueButton, WhiteButton} from "../../components/button";
-import {login} from "../../modules/user-api";
+import {mainColor, whiteBlur50Color} from "../../../statics/Colors";
+import WhiteTextInput from "../../../components/white-text-input";
+import {BlueButton, WhiteButton} from "../../../components/button";
+import {login} from "../../../modules/user-api";
+import Routes from "../../../statics/Routes";
 
 export default class LoginScreen extends Component {
   constructor(props) {
@@ -19,9 +20,9 @@ export default class LoginScreen extends Component {
   _email = (text) => this.state.email = text;
   _password = (text) => this.state.password = text;
 
-  _goMain = () => this.props.navigation.replace("Main");
-  _goSignUp = () => this.props.navigation.navigate("SignUp");
-  _goForgotPassword = () => this.props.navigation.navigate("ForgotPassword");
+  _goMain = () => this.props.navigation.replace(Routes.Main);
+  _goSignUp = () => this.props.navigation.navigate(Routes.SignUp);
+  _goForgotPassword = () => this.props.navigation.navigate(Routes.ForgotPassword);
 
   _login = () => {
     this._goMain();
