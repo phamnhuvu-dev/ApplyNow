@@ -23,8 +23,8 @@ class S implements WidgetsLocalizations {
 
   String get email => "Email";
   String get forgot_password => "Forgot Password";
+  String get login => "Login";
   String get password => "Password";
-  String get sign_in => "Sign In";
   String get sign_up => "Sign Up";
 }
 
@@ -39,9 +39,9 @@ class vi extends S {
   @override
   String get sign_up => "Đăng ký";
   @override
-  String get email => "Địa chỉ email";
+  String get login => "Đăng nhập";
   @override
-  String get sign_in => "Đăng nhập";
+  String get email => "Địa chỉ email";
   @override
   String get forgot_password => "Quên mật khẩu";
 }

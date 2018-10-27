@@ -1,7 +1,7 @@
 {
   "email": "Địa chỉ email",
   "password": "Mật khẩu",
-  "sign_in": "Đăng nhập",
+  "login": "Đăng nhập",
   "sign_up": "Đăng ký",
   "forgot_password": "Quên mật khẩu"
 }

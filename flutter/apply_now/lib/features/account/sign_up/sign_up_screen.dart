@@ -1,5 +1,5 @@
-import 'package:apply_now/resources/colors.dart';
-import 'package:apply_now/resources/widgets.dart';
+import 'package:apply_now/statics/colors.dart';
+import 'package:apply_now/statics/widgets.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {

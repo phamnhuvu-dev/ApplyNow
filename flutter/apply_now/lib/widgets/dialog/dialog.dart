@@ -1,4 +1,4 @@
-import 'package:apply_now/resources/colors.dart';
+import 'package:apply_now/statics/colors.dart';
 import 'package:flutter/material.dart';
 
 class Dialog extends StatelessWidget {
